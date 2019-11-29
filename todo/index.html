@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TO DO</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/723dcdd232.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .icon-button {
+        border: 0;
+        padding: 0;
+      }
+
+      .icon-button--done {
+        color: #28a745;
+      }
+
+      .icon-button--delete {
+        color: #dc3545;
+      }
+
+      .todo {
+        width: 800px;
+      }
+
+      .add {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <main role="main" class="flex-shrink-0">
+      <div class="container todo">
+        <h1 class="my-3">TO DO APP</h1>
+
+        <form class="mb-3">
+          <div class="row">
+            <div class="col-10">
+              <input
+                type="text"
+                class="form-control"
+                id="new-task"
+                name="new-task"
+                placeholder="New task"
+              />
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-success add">Add</button>
+            </div>
+          </div>
+        </form>
+
+        <ul class="list-group">
+          <li class="list-group-item">
+            <button type="button" class="mr-3 icon-button icon-button--done">
+              <i class="fas fa-check-circle"></i>
+            </button>
+            Cras justo odio
+            <button
+              type="button"
+              class="float-right icon-button icon-button--delete"
+            >
+              <i class="fas fa-minus-circle"></i>
+            </button>
+          </li>
+          <li class="list-group-item">
+            <button type="button" class="mr-3 icon-button">
+              <i class="far fa-circle"></i>
+            </button>
+            Dapibus ac facilisis in
+          </li>
+          <li class="list-group-item">Morbi leo risus</li>
+          <li class="list-group-item">Porta ac consectetur ac</li>
+          <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
