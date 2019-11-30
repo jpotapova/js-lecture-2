@@ -1,5 +1,5 @@
 // This is sample data
-const tasks = [
+let tasks = [
   {
     id: 1,
     title: "Buy groceries",

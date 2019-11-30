@@ -16,19 +16,16 @@ function createLi(title) {
   return li;
 }
 
-function getCompleteButtonClass(done) {
-  let className = "mr-3 icon-button";
-  if (done) {
-    className = className + " icon-button--done";
-  }
-  return className;
+function setCompleteButtonClass(button, done) {
+  button.className = getCompleteButtonClass(done);
+  const icon = button.querySelector("i");
+  icon.className = getCompleteIconClass(done);
 }
 
-function createCompleteButton(done) {
+function createCompleteButton() {
   const completeButton = document.createElement("button");
-  completeButton.className = getCompleteButtonClass(done);
+
   const icon = document.createElement("i");
-  icon.className = done ? "fas fa-check-circle" : "far fa-circle";
   completeButton.append(icon);
 
   return completeButton;
@@ -36,12 +33,34 @@ function createCompleteButton(done) {
 
 function displayTask(ul, task) {
   const li = createLi(task.title);
+  li.id = getTaskIdAttr(task.id);
   ul.append(li);
 
   const removeButton = createRemoveButton();
-  const completeButton = createCompleteButton(task.done);
   li.append(removeButton);
+
+  const completeButton = createCompleteButton();
+  setCompleteButtonClass(completeButton, task.done);
   li.prepend(completeButton);
+}
+
+function addRemoveListener(tasks, id) {
+  const task = document.getElementById(getTaskIdAttr(id));
+  const button = task.querySelector(`.icon-button--delete`);
+  button.addEventListener("click", function() {
+    tasks = removeTask(tasks);
+    task.remove();
+  });
+}
+
+function addCompleteListener(tasks, id) {
+  const taskNode = document.getElementById(getTaskIdAttr(id));
+  const button = taskNode.querySelector(`.icon-button--complete`);
+  button.addEventListener("click", function() {
+    tasks = toggleTask(tasks, id);
+    var task = getTask(tasks, id);
+    setCompleteButtonClass(button, task.done);
+  });
 }
 
 /* --------------------------------------- */
@@ -55,4 +74,8 @@ container.append(ul);
 
 tasks.forEach(function(task) {
   displayTask(ul, task);
+  addRemoveListener(tasks, task.id);
+  addCompleteListener(tasks, task.id);
 });
+
+/* --------------------------------------- */
