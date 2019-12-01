@@ -1,24 +1,24 @@
-const button = document.querySelector("button");
+var button = document.querySelector("button");
 
-const narrow = () => {
+function narrow() {
   alert("Narrow screen js running");
-};
+}
 
-const wide = () => {
+function wide() {
   alert("Wide screen js running");
-};
+}
 
-const handleNarrow = () => {
+function handleNarrow() {
   button.addEventListener("click", narrow);
   button.removeEventListener("click", wide);
-};
+}
 
-const handleWide = () => {
+function handleWide() {
   button.addEventListener("click", wide);
   button.removeEventListener("click", narrow);
-};
+}
 
-const mq = window.matchMedia("(min-width: 600px)");
+var mq = window.matchMedia("(min-width: 600px)");
 
 if (mq.matches) {
   handleWide();

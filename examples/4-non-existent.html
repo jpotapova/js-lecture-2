@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button>Click me</button>
+    <p>Text to be deleted</p>
+    <script>
+      var button = document.querySelector("button");
+      button.addEventListener("click", function() {
+        var p = document.querySelector("p");
+        if (p !== null) {
+          p.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

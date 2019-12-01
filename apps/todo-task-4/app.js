@@ -1,11 +1,14 @@
+// TASK: perform required actions on toggle button click
+// so that empty circle or green checkmark is displayed
+
 function addInfo() {
-  const p = document.createElement("p");
+  var p = document.createElement("p");
   p.innerText = "No tasks";
   document.getElementById("todos-content").append(p);
 }
 
 function handleRemove() {
-  const removeButtons = document.querySelectorAll(".js-delete");
+  var removeButtons = document.querySelectorAll(".js-delete");
   removeButtons.forEach(function(button) {
     button.addEventListener("click", function(event) {
       event.target.parentElement.parentElement.remove();
@@ -19,14 +22,10 @@ function handleRemove() {
 }
 
 function handleToggle() {
-  const toggleButtons = document.querySelectorAll(".js-toggle");
+  var toggleButtons = document.querySelectorAll(".js-toggle");
   toggleButtons.forEach(function(button) {
     button.addEventListener("click", function() {
-      button.classList.toggle("icon-button--done");
-      button.firstElementChild.classList.toggle("fa-check-circle");
-      button.firstElementChild.classList.toggle("fa-circle");
-      button.firstElementChild.classList.toggle("far");
-      button.firstElementChild.classList.toggle("fas");
+      // TIP: manipulate classnames here
     });
   });
 }

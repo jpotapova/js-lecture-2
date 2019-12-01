@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button>Click me</button>
+    <div></div>
+    <script>
+      var button = document.querySelector("button");
+
+      button.addEventListener("click", function() {
+        var p = document.createElement("p");
+        p.innerText = "Hello, I am new content";
+        document.querySelector("div").append(p);
+      });
+    </script>
+  </body>
+</html>
