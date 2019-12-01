@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form action="other-page.html">
+      <input type="text" />
+      <button type="submit">Click me</button>
+    </form>
+
+    <script>
+      var button = document.querySelector("button");
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

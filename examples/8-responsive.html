@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RESPONSIVE</title>
+  </head>
+  <body>
+    <button>Click me</button>
+    <script>
+      var button = document.querySelector("button");
+
+      function narrow() {
+        alert("Narrow screen js running");
+      }
+
+      function wide() {
+        alert("Wide screen js running");
+      }
+
+      function handleNarrow() {
+        button.addEventListener("click", narrow);
+        button.removeEventListener("click", wide);
+      }
+
+      function handleWide() {
+        button.addEventListener("click", wide);
+        button.removeEventListener("click", narrow);
+      }
+
+      var mq = window.matchMedia("(min-width: 600px)");
+
+      if (mq.matches) {
+        handleWide();
+      } else {
+        handleNarrow();
+      }
+
+      mq.addListener(function(e) {
+        if (e.matches) {
+          handleWide();
+        } else {
+          handleNarrow();
+        }
+      });
+    </script>
+  </body>
+</html>
