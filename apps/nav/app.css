@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #5bc0eb;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  padding: 10px 20px;
+}
+
+section {
+  border-top: 1px solid #fa7921;
+  padding: 20px;
+  height: 800px;
+}
+
+button {
+  color: #5bc0eb;
+  border: 1px solid #5bc0eb;
+  background: transparent;
+  font-size: 20px;
+  margin: 20px;
+}
