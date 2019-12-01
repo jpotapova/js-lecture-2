@@ -18,4 +18,18 @@ function handleRemove() {
   });
 }
 
+function handleToggle() {
+  const toggleButtons = document.querySelectorAll(".js-toggle");
+  toggleButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
+      button.classList.toggle("icon-button--done");
+      button.firstElementChild.classList.toggle("fa-check-circle");
+      button.firstElementChild.classList.toggle("fa-circle");
+      button.firstElementChild.classList.toggle("far");
+      button.firstElementChild.classList.toggle("fas");
+    });
+  });
+}
+
 handleRemove();
+handleToggle();
