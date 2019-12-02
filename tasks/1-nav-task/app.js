@@ -2,7 +2,7 @@
 // instead of default browser jump-to-content
 
 document.querySelectorAll(".js-nav").forEach(function(navItem) {
-  // TIP: add click listener to navItem here
+  // TIP: add and implement click listener to navItem here
 });
 
 // TIP: this is how you can perform a smooth scrolling
