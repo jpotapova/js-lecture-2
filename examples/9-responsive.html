@@ -34,6 +34,7 @@
         handleNarrow();
       }
 
+      // addListener - bacause this is the API for media query object
       mq.addListener(function(e) {
         if (e.matches) {
           handleWide();
